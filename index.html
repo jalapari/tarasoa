@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fantasy music production by TARASOA for games, novels, and immersive worlds." />
+    <title>TARASOA</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <style>
+        .parallax {
+            background-image: url('isekai.webp');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%; /* Changed from cover to 100% */
+            position: relative;
+            transition: background-size 0.5s ease;
+        }
+        .parallax.zoom {
+            background-size: 120% auto;
+        }
+        .full-parallax {
+            height: 100vh;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero-content h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero-content p {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .section-box {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .glow-on-hover {
+            transition: all 0.3s ease;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800" data-aos-easing="ease" data-aos-duration="600" data-aos-delay="0">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">TARASOA</div>
+            <button class="md:hidden focus:outline-none" id="menuToggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-4">
+                <a href="#about" class="hover:text-green-500">About</a>
+                <a href="#services" class="hover:text-green-500">Services</a>
+                <a href="#portfolio" class="hover:text-green-500">Portfolio</a>
+                <a href="#contact" class="hover:text-green-500">Contact</a>
+                <a href="#" class="hover:text-green-500">Waiting List</a>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-6 py-2" id="mobileMenu">
+            <a href="#about" class="block py-2 hover:text-green-500">About</a>
+            <a href="#services" class="block py-2 hover:text-green-500">Services</a>
+            <a href="#portfolio" class="block py-2 hover:text-green-500">Portfolio</a>
+            <a href="#contact" class="block py-2 hover:text-green-500">Contact</a>
+            <a href="#" class="block py-2 hover:text-green-500">Waiting List</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="parallax full-parallax flex items-center justify-center">
+        <div class="hero-content">
+            <h1 class="text-6xl font-bold mb-4">Awaken the Magic of Sound</h1>
+            <p class="text-lg mb-8">Enchanting Music Production for Your Fantasy World</p>
+            <a href="#services" class="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-400 transition duration-300 transform hover:scale-105">Get Started</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+            <p class="text-lg text-center mb-4">I am a passionate music producer specializing in creating enchanting soundscapes and melodies that transport you to magical realms.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="parallax py-20 relative min-h-screen" data-aos="fade-up">
+        <div class="absolute inset-0 bg-black bg-opacity-60 z-0" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px; background-attachment: fixed;"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold mb-2">Fantasy Music Production</h3>
+                    <p>Crafting unique tracks that evoke the spirit of fantasy and adventure.</p>
+                </div>
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold mb-2">Mixing & Mastering</h3>
+                    <p>Mixing and mastering to ensure your music shines in every realm.</p>
+                </div>
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold mb-2">Sound Design</h3>
+                    <p>Creating magical sound effects and atmospheres to enhance your storytelling.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold mb-2">Orchestral Arrangement</h3>
+                    <p>Creating rich orchestral compositions for your fantasy worlds.</p>
+                </div>
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold mb-2">Interactive Game Music Composing</h3>
+                    <p>Creating dynamic and adaptive music that reacts to in-game events and player choices.</p>
+                </div>
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold mb-2">Custom Soundtracks</h3>
+                    <p>Personalized musical scores tailored to your project's needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dfu0Xv8PqH0?si=NVPgGrog5ipdURrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Xw6wpeH6rjQ?si=pdtyjdYQf7QlDrJc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/1ohjTkyFVTw?si=lUu2AoQYvyw-sMnC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wO6J6zV_Xm8?si=NprzQ4i06xjuJQf7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="parallax py-20 relative min-h-screen" data-aos="fade-up">
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Contact Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
+                    <img src="https://www.fiverr.com/favicon.ico" alt="Fiverr" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                    <a href="https://www.fiverr.com/tarasoa" class="bg-green-500 text-white px-4 py-2 rounded">Fiverr</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
+                    <img src="https://www.upwork.com/favicon.ico" alt="Upwork" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                    <a href="https://upwork.com/freelancers/herwansyahh" class="bg-green-500 text-white px-4 py-2 rounded">UpWork</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
+                    <img src="https://www.freelancer.com/favicon.ico" alt="Freelancer" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                    <a href="https://www.freelancer.com/u/telasotarasoa" class="bg-green-500 text-white px-4 py-2 rounded">Freelancer</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
+                    <img src="vgen.png" alt="Vgen" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                    <a href="https://vgen.co/Tarasoa" class="bg-green-500 text-white px-4 py-2 rounded">Vgen</a>
+                </div>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Other Contacts</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <a href="https://wa.me/+6282194486847" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-green-100 transition">
+        <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
+        <div>WhatsApp</div>
+    </a>
+    <a href="https://x.com/t_telaso" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-blue-100 transition">
+        <i class="fab fa-twitter text-blue-500 text-2xl"></i>
+        <div>Twitter</div>
+    </a>
+    <a href="https://www.facebook.com/tarasoa11/" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-blue-200 transition">
+        <i class="fab fa-facebook text-blue-700 text-2xl"></i>
+        <div>Facebook</div>
+    </a>
+    <a href="#" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-pink-100 transition">
+        <i class="fab fa-instagram text-pink-500 text-2xl"></i>
+        <div>Instagram</div>
+    </a>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Volume Control -->
+    <button id="volumeToggle" class="fixed bottom-4 right-4 bg-gray-800 text-white rounded-full p-3 shadow-lg z-50">
+        <i class="fas fa-volume-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800 text-white text-center">
+        <p>&copy; 2025 TARASOA. All rights reserved.</p>
+    </footer>
+
+    <iframe id="soundcloudPlayer" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1473110743&auto_play=true&show_artwork=false&visual=false&buying=false&sharing=false&download=false" style="display: none;"></iframe>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax zoom effect - zoom out when scrolling down, zoom in when scrolling up
+        let lastScrollY = window.scrollY;
+        
+        document.addEventListener('scroll', function() {
+            const currentScrollY = window.scrollY;
+            const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+            lastScrollY = currentScrollY;
+            
+            const parallaxSections = document.querySelectorAll('.parallax');
+            parallaxSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const sectionMiddle = rect.top + rect.height/2;
+                
+                // Only animate sections in/entering viewport
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const middleOfViewport = window.innerHeight / 2;
+                    const distanceFromMiddle = Math.abs(sectionMiddle - middleOfViewport);
+                    
+                    // Base zoom for sections not at viewport center
+                    let zoomLevel = 1 - (distanceFromMiddle / window.innerHeight) * 0.3;
+                    
+                    // Additional zoom based on scroll direction
+                    if (scrollDirection === 'down') {
+                        zoomLevel *= 0.9; // Zoom out when scrolling down
+                    } else {
+                        zoomLevel *= 1.1; // Zoom in when scrolling up
+                    }
+                    
+                    // Apply the zoom, keeping it within reasonable limits and maintaining stretch
+                    const finalZoom = Math.max(0.8, Math.min(1.4, zoomLevel * 1.2));
+                    section.style.backgroundSize = `${100 * finalZoom}% ${100 * finalZoom}%`;
+                }
+            });
+        });
+
+        // Volume control
+        const volumeToggle = document.getElementById('volumeToggle');
+        const soundcloudPlayer = document.getElementById('soundcloudPlayer');
+        let isMuted = false;
+        
+        volumeToggle.addEventListener('click', function() {
+            const widget = SC.Widget(soundcloudPlayer);
+            isMuted = !isMuted;
+            const icon = this.querySelector('i');
+            
+            if (isMuted) {
+                widget.setVolume(0);
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            } else {
+                widget.setVolume(50);
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            }
+        });
+
+        // Initialize SoundCloud Widget API
+        document.addEventListener('DOMContentLoaded', function() {
+            const script = document.createElement('script');
+            script.src = 'https://w.soundcloud.com/player/api.js';
+            document.body.appendChild(script);
+            
+            script.onload = function() {
+                const widget = SC.Widget(soundcloudPlayer);
+                widget.setVolume(50);
+            };
+        });
+    </script>
+</body>
+</html>
