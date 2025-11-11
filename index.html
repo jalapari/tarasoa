@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fantasy music production by TARASOA for games, novels, and immersive worlds." />
-    <title>TARASOA</title>
+    <!-- OPTIMASI SEO: Judul dan Deskripsi diperkaya dengan keyword relevan -->
+    <meta name="description" content="Fantasy music production by TARASOA for games, novels, and immersive worlds. Get professional soundtrack, mixing, and sound design services." />
+    <title>TARASOA | Fantasy Music Production, Game Soundtrack, Mixing & Sound Design</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
     <style>
+        /* PERUBAHAN TEMA: Tema gelap fantasi */
+        body {
+            background-color: #0d111c; /* Biru tua gelap */
+            color: #e5e7eb; /* Teks putih keabu-abuan */
+            font-family: 'Inter', sans-serif;
+        }
+
         .parallax {
             background-image: url('isekai.webp');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 100% 100%; /* Changed from cover to 100% */
+            background-size: cover;
             position: relative;
-            transition: background-size 0.5s ease;
+            /* Tambahkan transisi untuk efek yang lebih halus saat di-zoom */
+            transition: background-size 0.5s ease-out; 
         }
-        .parallax.zoom {
-            background-size: 120% auto;
-        }
+
         .full-parallax {
             height: 100vh;
+            /* Tambahkan efek gelap ke gambar latar hero */
+            box-shadow: inset 0 -50px 50px -50px #0d111c; 
         }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -31,62 +41,112 @@
             padding: 20px;
         }
         .hero-content h1 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            /* Warna yang lebih mencolok untuk tema fantasi */
+            color: #d1fae5; 
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
         }
         .hero-content p {
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
+        
+        /* Gaya untuk kartu/box agar cocok dengan tema gelap */
         .section-box {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: #1a202c; /* Background kartu lebih gelap */
+            border: 1px solid rgba(45, 55, 72, 0.5); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow lebih kuat */
         }
-        .glow-on-hover {
-            transition: all 0.3s ease;
-        }
+        
+        /* Mengganti warna hover agar lebih terintegrasi dengan tema hijau */
         .glow-on-hover:hover {
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            box-shadow: 0 0 25px rgba(52, 211, 153, 0.8); /* Hijau muda/mint glow */
+            transform: translateY(-5px); /* Efek melayang */
+        }
+
+        /* Styling navigasi agar menempel pada tema gelap */
+        .fixed.w-full.bg-white.shadow-md.z-10 {
+            background-color: #1a202c; /* Warna navbar gelap */
+            color: #d1fae5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hover link navigasi */
+        .hover\:text-green-500:hover {
+            color: #34d399; /* Tailwind green-400/500 */
+        }
+
+        /* Button styling */
+        .bg-green-500 {
+            background-color: #10b981; /* Hijau */
+        }
+        .hover\:bg-green-400:hover {
+            background-color: #059669; /* Hijau lebih gelap saat hover */
+        }
+
+        .soundcloud-player-box {
+            background-color: #1a202c;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Perbaikan untuk Services Section agar background lebih kontras */
+        #services .bg-black.bg-opacity-60 {
+            background-color: rgba(0, 0, 0, 0.4) !important;
+        }
+        #services .bg-white.bg-opacity-90 {
+            background-color: rgba(255, 255, 255, 0.1) !important; /* Kartu transparan gelap */
+            color: #e5e7eb;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        #services h3, #services p {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800" data-aos-easing="ease" data-aos-duration="600" data-aos-delay="0">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-10">
+    <nav class="fixed w-full bg-white shadow-md z-10" role="navigation">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">TARASOA</div>
-            <button class="md:hidden focus:outline-none" id="menuToggle">
+            <!-- Ditambahkan aria-label untuk aksesibilitas -->
+            <button class="md:hidden focus:outline-none" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-            <div class="hidden md:flex space-x-4">
-                <a href="#about" class="hover:text-green-500">About</a>
-                <a href="#services" class="hover:text-green-500">Services</a>
-                <a href="#portfolio" class="hover:text-green-500">Portfolio</a>
-                <a href="#contact" class="hover:text-green-500">Contact</a>
-                <a href="#" class="hover:text-green-500">Waiting List</a>
+            <div class="hidden md:flex space-x-4" role="menu">
+                <a href="#about" class="hover:text-green-500" role="menuitem">About</a>
+                <a href="#services" class="hover:text-green-500" role="menuitem">Services</a>
+                <a href="#portfolio" class="hover:text-green-500" role="menuitem">Portfolio</a>
+                <a href="#contact" class="hover:text-green-500" role="menuitem">Contact</a>
+                <a href="#" class="hover:text-green-500" role="menuitem">Waiting List</a>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-white w-full px-6 py-2" id="mobileMenu">
-            <a href="#about" class="block py-2 hover:text-green-500">About</a>
-            <a href="#services" class="block py-2 hover:text-green-500">Services</a>
-            <a href="#portfolio" class="block py-2 hover:text-green-500">Portfolio</a>
-            <a href="#contact" class="block py-2 hover:text-green-500">Contact</a>
-            <a href="#" class="block py-2 hover:text-green-500">Waiting List</a>
+        <div class="md:hidden hidden bg-white w-full px-6 py-2" id="mobileMenu" role="menu" aria-labelledby="menuToggle">
+            <a href="#about" class="block py-2 hover:text-green-500" role="menuitem">About</a>
+            <a href="#services" class="block py-2 hover:text-green-500" role="menuitem">Services</a>
+            <a href="#portfolio" class="block py-2 hover:text-green-500" role="menuitem">Portfolio</a>
+            <a href="#contact" class="block py-2 hover:text-green-500" role="menuitem">Contact</a>
+            <a href="#" class="block py-2 hover:text-green-500" role="menuitem">Waiting List</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="parallax full-parallax flex items-center justify-center">
+    <header class="parallax full-parallax flex items-center justify-center" role="banner">
         <div class="hero-content">
+            <!-- H1 tidak diubah, hanya memastikan strukturnya benar -->
             <h1 class="text-6xl font-bold mb-4">Awaken the Magic of Sound</h1>
             <p class="text-lg mb-8">Enchanting Music Production for Your Fantasy World</p>
-            <a href="#services" class="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-400 transition duration-300 transform hover:scale-105">Get Started</a>
+            <!-- Ditambahkan aria-label untuk aksesibilitas -->
+            <a href="#services" class="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-400 transition duration-300 transform hover:scale-105" aria-label="Get Started with our Music Services">Get Started</a>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white" data-aos="fade-up">
+    <section id="about" class="py-20 bg-white" data-aos="fade-up" data-aos-delay="100">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
             <p class="text-lg text-center mb-4">I am a passionate music producer specializing in creating enchanting soundscapes and melodies that transport you to magical realms.</p>
@@ -94,34 +154,35 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="parallax py-20 relative min-h-screen" data-aos="fade-up">
-        <div class="absolute inset-0 bg-black bg-opacity-60 z-0" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px; background-attachment: fixed;"></div>
+    <section id="services" class="parallax py-20 relative min-h-screen" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute inset-0 bg-black bg-opacity-60 z-0" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px; background-attachment: fixed;" aria-hidden="true"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-8 text-white">My Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                <!-- Efek AOS lebih diperkuat (zoom-in-up) -->
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in-up" data-aos-delay="100">
                     <h3 class="text-xl font-semibold mb-2">Fantasy Music Production</h3>
                     <p>Crafting unique tracks that evoke the spirit of fantasy and adventure.</p>
                 </div>
-                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in-up" data-aos-delay="200">
                     <h3 class="text-xl font-semibold mb-2">Mixing & Mastering</h3>
                     <p>Mixing and mastering to ensure your music shines in every realm.</p>
                 </div>
-                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in-up" data-aos-delay="300">
                     <h3 class="text-xl font-semibold mb-2">Sound Design</h3>
                     <p>Creating magical sound effects and atmospheres to enhance your storytelling.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in-up" data-aos-delay="400">
                     <h3 class="text-xl font-semibold mb-2">Orchestral Arrangement</h3>
                     <p>Creating rich orchestral compositions for your fantasy worlds.</p>
                 </div>
-                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in-up" data-aos-delay="500">
                     <h3 class="text-xl font-semibold mb-2">Interactive Game Music Composing</h3>
                     <p>Creating dynamic and adaptive music that reacts to in-game events and player choices.</p>
                 </div>
-                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="zoom-in-up" data-aos-delay="600">
                     <h3 class="text-xl font-semibold mb-2">Custom Soundtracks</h3>
                     <p>Personalized musical scores tailored to your project's needs.</p>
                 </div>
@@ -133,20 +194,37 @@
     <section id="portfolio" class="py-20 bg-white" data-aos="fade-up">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-8">Portfolio</h2>
+            
+            <!-- START: Embed SoundCloud (Playlist Tunggal yang Valid) -->
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Playlist: On a Journey BGM by Tarasoa</h3>
+            <div class="mb-12" data-aos="fade-up">
+                <iframe 
+                    width="100%" 
+                    height="450" 
+                    scrolling="no" 
+                    frameborder="no" 
+                    allow="autoplay" 
+                    title="SoundCloud Playlist: On a Journey BGM by Tarasoa"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1914983159&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                ></iframe>
+            </div>
+            <!-- END: Embed SoundCloud (Playlist Tunggal yang Valid) -->
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dfu0Xv8PqH0?si=NVPgGrog5ipdURrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="aspect-w-16 aspect-h-9" data-aos="fade-right">
+                    <!-- Title atribut membantu aksesibilitas dan SEO -->
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dfu0Xv8PqH0?si=NVPgGrog5ipdURrL" title="YouTube video player - Fantasy Music Track 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Xw6wpeH6rjQ?si=pdtyjdYQf7QlDrJc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="aspect-w-16 aspect-h-9" data-aos="fade-left">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Xw6wpeH6rjQ?si=pdtyjdYQf7QlDrJc" title="YouTube video player - Orchestral Music Composition" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/1ohjTkyFVTw?si=lUu2AoQYvyw-sMnC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="aspect-w-16 aspect-h-9" data-aos="fade-up">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/1ohjTkyFVTw?si=lUu2AoQvyw-sMnC" title="YouTube video player - Game Music Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wO6J6zV_Xm8?si=NprzQ4i06xjuJQf7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-delay="200">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wO6J6zV_Xm8?si=NprzQ4i06xjuJQf7" title="YouTube video player - Epic Score Example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -154,52 +232,58 @@
 
     <!-- Contact Section -->
     <section id="contact" class="parallax py-20 relative min-h-screen" data-aos="fade-up">
-        <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-0" aria-hidden="true"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-8 text-white" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Contact Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
-                    <img src="https://www.fiverr.com/favicon.ico" alt="Fiverr" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="flip-up" data-aos-delay="100">
+                    <!-- Ditambahkan alt attribute -->
+                    <img src="https://www.fiverr.com/favicon.ico" alt="Fiverr icon" class="mx-auto mb-4" style="width: 50px; height: 50px;">
                     <a href="https://www.fiverr.com/tarasoa" class="bg-green-500 text-white px-4 py-2 rounded">Fiverr</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
-                    <img src="https://www.upwork.com/favicon.ico" alt="Upwork" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="flip-up" data-aos-delay="200">
+                    <!-- Ditambahkan alt attribute -->
+                    <img src="https://www.upwork.com/favicon.ico" alt="Upwork icon" class="mx-auto mb-4" style="width: 50px; height: 50px;">
                     <a href="https://upwork.com/freelancers/herwansyahh" class="bg-green-500 text-white px-4 py-2 rounded">UpWork</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
-                    <img src="https://www.freelancer.com/favicon.ico" alt="Freelancer" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="flip-up" data-aos-delay="300">
+                    <!-- Ditambahkan alt attribute -->
+                    <img src="https://www.freelancer.com/favicon.ico" alt="Freelancer icon" class="mx-auto mb-4" style="width: 50px; height: 50px;">
                     <a href="https://www.freelancer.com/u/telasotarasoa" class="bg-green-500 text-white px-4 py-2 rounded">Freelancer</a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover text-center">
-                    <img src="vgen.png" alt="Vgen" class="mx-auto mb-4" style="width: 50px; height: 50px;">
+                <div class="bg-white p-6 rounded-lg shadow-lg section-box glow-on-hover" data-aos="flip-up" data-aos-delay="400">
+                    <!-- Ditambahkan alt attribute -->
+                    <img src="vgen.png" alt="Vgen icon" class="mx-auto mb-4" style="width: 50px; height: 50px;">
                     <a href="https://vgen.co/Tarasoa" class="bg-green-500 text-white px-4 py-2 rounded">Vgen</a>
                 </div>
             </div>
             <h3 class="text-xl font-bold text-center mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Other Contacts</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <a href="https://wa.me/+6282194486847" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-green-100 transition">
-        <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
-        <div>WhatsApp</div>
-    </a>
-    <a href="https://x.com/t_telaso" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-blue-100 transition">
-        <i class="fab fa-twitter text-blue-500 text-2xl"></i>
-        <div>Twitter</div>
-    </a>
-    <a href="https://www.facebook.com/tarasoa11/" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-blue-200 transition">
-        <i class="fab fa-facebook text-blue-700 text-2xl"></i>
-        <div>Facebook</div>
-    </a>
-    <a href="#" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-pink-100 transition">
-        <i class="fab fa-instagram text-pink-500 text-2xl"></i>
-        <div>Instagram</div>
-    </a>
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- PERUBAHAN: Menambahkan class text-gray-800 agar teks tetap gelap (terlihat) di latar belakang putih -->
+                <a href="https://wa.me/6288293751879" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-green-100 transition text-gray-800" data-aos="fade-right" data-aos-delay="500">
+                    <i class="fab fa-whatsapp text-green-600 text-2xl" aria-hidden="true"></i>
+                    <div>WhatsApp</div>
+                </a>
+                <a href="https://x.com/t_telaso" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-blue-100 transition text-gray-800" data-aos="fade-left" data-aos-delay="600">
+                    <i class="fab fa-twitter text-blue-500 text-2xl" aria-hidden="true"></i>
+                    <div>Twitter</div>
+                </a>
+                <a href="https://www.facebook.com/tarasoa11/" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-blue-200 transition text-gray-800" data-aos="fade-right" data-aos-delay="700">
+                    <i class="fab fa-facebook text-blue-700 text-2xl" aria-hidden="true"></i>
+                    <div>Facebook</div>
+                </a>
+                <a href="#" target="_blank" class="bg-white p-4 rounded-lg shadow-lg section-box text-center hover:bg-pink-100 transition text-gray-800" data-aos="fade-left" data-aos-delay="800">
+                    <i class="fab fa-instagram text-pink-500 text-2xl" aria-hidden="true"></i>
+                    <div>Instagram</div>
+                </a>
+            </div>
 
         </div>
     </section>
 
     <!-- Volume Control -->
-    <button id="volumeToggle" class="fixed bottom-4 right-4 bg-gray-800 text-white rounded-full p-3 shadow-lg z-50">
+    <!-- Ditambahkan aria-label untuk aksesibilitas -->
+    <button id="volumeToggle" class="fixed bottom-4 right-4 bg-gray-800 text-white rounded-full p-3 shadow-lg z-50" aria-label="Toggle background music mute/unmute">
         <i class="fas fa-volume-up"></i>
     </button>
 
@@ -208,11 +292,16 @@
         <p>&copy; 2025 TARASOA. All rights reserved.</p>
     </footer>
 
-    <iframe id="soundcloudPlayer" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1473110743&auto_play=true&show_artwork=false&visual=false&buying=false&sharing=false&download=false" style="display: none;"></iframe>
+    <!-- SoundCloud Player: auto_play diubah ke false untuk CWV -->
+    <iframe id="soundcloudPlayer" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1473110743&auto_play=false&show_artwork=false&visual=false&buying=false&sharing=false&download=false" style="display: none;" title="TARASOA Background Music Player"></iframe>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            // AOS diatur untuk memuat animasi setiap kali elemen masuk viewport
+            once: false, 
+            mirror: true 
+        });
         
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -220,6 +309,9 @@
         
         menuToggle.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
+            // Optimasi A11Y: Update aria-expanded
+            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+            menuToggle.setAttribute('aria-expanded', isExpanded);
         });
 
         // Smooth scroll for navigation links
@@ -232,7 +324,7 @@
             });
         });
 
-        // Parallax zoom effect - zoom out when scrolling down, zoom in when scrolling up
+        // PERUBAHAN JS: Implementasi Parallax Zoom yang Ditingkatkan
         let lastScrollY = window.scrollY;
         
         document.addEventListener('scroll', function() {
@@ -243,51 +335,37 @@
             const parallaxSections = document.querySelectorAll('.parallax');
             parallaxSections.forEach(section => {
                 const rect = section.getBoundingClientRect();
-                const sectionMiddle = rect.top + rect.height/2;
                 
-                // Only animate sections in/entering viewport
+                // Hanya animasi ketika section terlihat (visible)
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    const middleOfViewport = window.innerHeight / 2;
-                    const distanceFromMiddle = Math.abs(sectionMiddle - middleOfViewport);
+                    // Hitung seberapa jauh elemen dari tengah viewport (0 = di tengah, 1 = di tepi)
+                    const viewportCenter = window.innerHeight / 2;
+                    const elementCenter = rect.top + rect.height / 2;
+                    const distanceFromCenter = Math.abs(elementCenter - viewportCenter);
                     
-                    // Base zoom for sections not at viewport center
-                    let zoomLevel = 1 - (distanceFromMiddle / window.innerHeight) * 0.3;
+                    // Normalisasi jarak ke skala 0 sampai 1
+                    const normalizedDistance = Math.min(1, distanceFromCenter / viewportCenter);
+
+                    // Efek parallax zoom: Zoom out saat menjauh dari pusat viewport (0.95)
+                    // Menggunakan persentase agar gambar selalu menutupi area (cover)
+                    let zoomFactor = 1.05 + (normalizedDistance * 0.1); 
                     
-                    // Additional zoom based on scroll direction
-                    if (scrollDirection === 'down') {
-                        zoomLevel *= 0.9; // Zoom out when scrolling down
-                    } else {
-                        zoomLevel *= 1.1; // Zoom in when scrolling up
-                    }
+                    // Efek Parallax Vertikal: Geser posisi latar belakang
+                    // Jarak scroll dari atas viewport
+                    const scrollOffset = rect.top * 0.2; 
                     
-                    // Apply the zoom, keeping it within reasonable limits and maintaining stretch
-                    const finalZoom = Math.max(0.8, Math.min(1.4, zoomLevel * 1.2));
-                    section.style.backgroundSize = `${100 * finalZoom}% ${100 * finalZoom}%`;
+                    // Terapkan Zoom dan Geser Vertikal
+                    section.style.backgroundSize = `${zoomFactor * 100}%`;
+                    section.style.backgroundPositionY = `calc(50% + ${scrollOffset}px)`;
                 }
             });
         });
-
-        // Volume control
+        
+        // Volume control: Menginisialisasi ikon awal sebagai mute, dan memulai play saat diklik
         const volumeToggle = document.getElementById('volumeToggle');
         const soundcloudPlayer = document.getElementById('soundcloudPlayer');
-        let isMuted = false;
+        let isPlaying = false; 
         
-        volumeToggle.addEventListener('click', function() {
-            const widget = SC.Widget(soundcloudPlayer);
-            isMuted = !isMuted;
-            const icon = this.querySelector('i');
-            
-            if (isMuted) {
-                widget.setVolume(0);
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-volume-mute');
-            } else {
-                widget.setVolume(50);
-                icon.classList.remove('fa-volume-mute');
-                icon.classList.add('fa-volume-up');
-            }
-        });
-
         // Initialize SoundCloud Widget API
         document.addEventListener('DOMContentLoaded', function() {
             const script = document.createElement('script');
@@ -296,7 +374,35 @@
             
             script.onload = function() {
                 const widget = SC.Widget(soundcloudPlayer);
-                widget.setVolume(50);
+                
+                // Set initial icon to MUTE (since auto_play is false)
+                const icon = volumeToggle.querySelector('i');
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+
+                volumeToggle.addEventListener('click', function() {
+                    if (!isPlaying) {
+                        // Jika belum memutar, mulai memutar dengan volume 50
+                        widget.play();
+                        widget.setVolume(50);
+                        icon.classList.remove('fa-volume-mute');
+                        icon.classList.add('fa-volume-up');
+                        isPlaying = true;
+                    } else {
+                        // Jika sedang memutar, mute/pause (diasumsikan tombol adalah mute)
+                        widget.setVolume(0);
+                        icon.classList.remove('fa-volume-up');
+                        icon.classList.add('fa-volume-mute');
+                        isPlaying = false;
+                    }
+                });
+                
+                // Tambahkan listener untuk event pause/end dari widget
+                widget.bind(SC.Widget.Events.FINISH, function() {
+                    isPlaying = false;
+                    icon.classList.remove('fa-volume-up');
+                    icon.classList.add('fa-volume-mute');
+                });
             };
         });
     </script>
